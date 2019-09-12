@@ -1,0 +1,31 @@
+<div *ngIf="message"> {{ message }} </div>
+<form #bookEditForm="ngForm" (ngSubmit)="editBook(bookEditForm)">
+  <input type="hidden" name="id" [(ngModel)]="book.id">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <label>
+          <input type="text" name="title" [(ngModel)]="book.title"/>
+        </label>
+      </td>
+      <td>
+      <label>
+        <input type="text" name="author" ngModel [(ngModel)]="book.author"/>
+      </label>
+    </td>
+      <td>
+        <label>
+          <input type="text" name="description" ngModel [(ngModel)]="book.description"/>
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="Update Customer"></td>
+    </tr>
+  </table>
+</form>

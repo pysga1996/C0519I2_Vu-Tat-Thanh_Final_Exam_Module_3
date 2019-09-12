@@ -1,0 +1,9 @@
+<div *ngIf="message">{{ message }}</div>
+<div *ngIf="book">
+  <h3>Are you sure to delete this book's information?</h3>
+  <h4>ID</h4><span>{{ book.id }}</span>
+  <h4>Title</h4><span>{{ book.title }}</span>
+  <h4>Author</h4><span>{{ book.author }}</span>
+  <h4>Description</h4><span>{{ book.description }}</span>
+  <button (click)="deleteBook()">Remove Book's Information</button>
+</div>

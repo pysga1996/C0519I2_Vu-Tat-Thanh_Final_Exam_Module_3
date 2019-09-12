@@ -1,0 +1,24 @@
+<div>
+  <span *ngIf="message">{{ message }}</span>
+</div>
+<table class="table table-striped table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Title</th>
+    <th scope="col">Author</th>
+    <th scope="col">Edit|Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of bookList">
+    <td> {{ book.id }} </td>
+    <td> <a [routerLink]="['/','book','view',book.id]">{{ book.title }} </a></td>
+    <td> {{ book.author }} </td>
+    <td>
+      <a class="btn btn-primary" [routerLink]="['/','book','edit',book.id]">Edit</a><span> | </span>
+      <a class="btn btn-danger" [routerLink]="['/','book','delete',book.id]">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
