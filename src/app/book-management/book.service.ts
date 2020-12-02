@@ -18,7 +18,7 @@ export class BookService {
   }
 
   getBook(id: number): Observable<Book> {
-    const url = `${this.apiUrl}/book/${id}`;
+    const url = `${this.apiUrl}/books/${id}`;
     return this.httpClient.get<Book>(url);
   }
 
